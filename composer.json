@@ -1,0 +1,28 @@
+{
+  "name": "mediatechlimited/mailer",
+  "description": "Mediatechlimited mailer",
+  "keywords": [
+    "laravel"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Valeriy Shnurovoy",
+      "email": "_val@rambler.ru"
+    }
+  ],
+  "require": {
+    "php": "^7.2 || ^8.0",
+    "laravel/framework": ">=8.0.0 || ^7.0"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "MediaMailer\\": "src"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
