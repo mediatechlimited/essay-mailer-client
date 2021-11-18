@@ -1,5 +1,5 @@
 {
-  "name": "mediatechlimited/mailer",
+  "name": "mediatechlimited/essay-mailer-client",
   "description": "Mediatechlimited mailer",
   "keywords": [
     "laravel"
@@ -23,6 +23,12 @@
       "MediaMailer\\": "src"
     }
   },
+  "repositories": [
+     {
+       "type": "composer",
+       "url": "https://github.com/mediatechlimited/essay-mailer-client.git"
+    }
+  ],
   "minimum-stability": "dev",
   "prefer-stable": true
 }
