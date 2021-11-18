@@ -1,6 +1,7 @@
 {
   "name": "mediatechlimited/essay-mailer-client",
   "description": "Mediatechlimited mailer",
+  "version": "1.0.0",
   "keywords": [
     "laravel"
   ],
