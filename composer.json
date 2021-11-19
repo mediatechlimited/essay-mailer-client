@@ -1,6 +1,7 @@
 {
-  "name": "mediatechlimited/essay-mailer-client",
-  "description": "Mediatechlimited mailer",
+  "name": "essay/mailer-client",
+  "description": "Essay mailer",
+  "type": "library",
   "keywords": [
     "laravel"
   ],
@@ -20,15 +21,9 @@
   },
   "autoload": {
     "psr-4": {
-      "MediaMailer\\": "src"
+      "MailerClient\\": "src"
     }
   },
-  "repositories": [
-     {
-       "type": "vcs",
-       "url": "https://github.com/mediatechlimited/essay-mailer-client"
-     }
-  ],
   "minimum-stability": "dev",
   "prefer-stable": true
 }

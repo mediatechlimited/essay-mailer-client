@@ -1,13 +1,13 @@
 <?php
 
-namespace MediaMailer;
+namespace MailerClient;
 
 class ConfigFactory
 {
     public function mailerConfig(?string $mailerConfig = null): array
     {
         if ($mailerConfig === null) {
-            $mailerConfig = config('mediatechlimited-mailer-client');
+            $mailerConfig = config('mailer-client');
         }
 
         if (!isset($mailerConfig)) {

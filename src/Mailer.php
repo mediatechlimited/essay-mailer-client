@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaMailer;
+namespace MailerClient;
 
 use Illuminate\Support\Facades\Http;
 
