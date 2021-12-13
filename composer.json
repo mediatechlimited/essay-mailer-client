@@ -28,7 +28,10 @@
     "laravel": {
       "providers": [
         "MailerClient\\MailerClientServiceProvider"
-      ]
+      ],
+      "aliases": {
+        "MailerClient": "MailerClient\\MailerClientFacade"
+      }
     }
   },
   "minimum-stability": "dev",
