@@ -13,12 +13,19 @@ class Mailer
         $this->config = ConfigFactory::mailerConfig();
     }
 
-    public function send($email, $template, $data)
+    /**
+     * @param $token - secure token from .env
+     * @param $email - email address
+     * @param $template - template name
+     * @param $data - mail data
+     * @return int
+     */
+    public function send($token, $email, $template, $data)
     {
         $response = Http::post(
             $this->getApiUrl(),
             [
-                'token' => $this->config['token'],
+                'token' => $token,
                 'email' => $email,
                 'template' => $template,
                 'options' => json_encode($this->getOptions()),
