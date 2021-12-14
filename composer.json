@@ -1,0 +1,39 @@
+{
+  "name": "essay/mailer-client",
+  "description": "Essay mailer",
+  "type": "library",
+  "keywords": [
+    "laravel"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Valeriy Shnurovoy",
+      "email": "_val@rambler.ru"
+    }
+  ],
+  "require": {
+      "php": "^7.4",
+      "laravel/framework": "^8.0"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "MailerClient\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MailerClient\\MailerClientServiceProvider"
+      ],
+      "aliases": {
+        "MailerClient": "MailerClient\\MailerClientFacade"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
