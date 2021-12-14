@@ -6,11 +6,11 @@ use Illuminate\Support\Facades\Http;
 
 class Mailer
 {
-    private ConfigFactory $configFactory;
+    private $config;
 
-    public function __construct(ConfigFactory $configFactory)
+    public function __construct()
     {
-        $this->configFactory = $configFactory;
+        $this->config = ConfigFactory::mailerConfig();
     }
 
     public function send($email, $template, $data)
@@ -18,6 +18,7 @@ class Mailer
         $response = Http::post(
             $this->getApiUrl(),
             [
+                'token' => $this->config['token'],
                 'email' => $email,
                 'template' => $template,
                 'options' => json_encode($this->getOptions()),
@@ -29,18 +30,16 @@ class Mailer
 
     private function getOptions()
     {
-        $config = $this->configFactory->mailerConfig();
         return [
-            'from'=> $config['from'],
-            'appName'=> $config['appName'],
-            'appURL'=> $config['appURL'],
-            'domain' => $config['domain'],
+            'from'=> $this->config['from'],
+            'appName'=> $this->config['appName'],
+            'appURL'=> $this->config['appURL'],
+            'domain' => $this->config['domain'],
         ];
     }
 
     private function getApiUrl()
     {
-        $config = $this->configFactory->mailerConfig();
-        return $config['apiDomain'] . $config['apiUrl'];
+        return $this->config['apiDomain'] . $this->config['apiUrl'];
     }
 }

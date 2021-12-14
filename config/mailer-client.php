@@ -1,5 +1,6 @@
 <?php
 return [
+    'token' => '',
     'apiDomain' => 'http://127.0.0.1:8000/',
     'apiUrl' => 'api/send',
     'from'=> 'noreply@test.com',

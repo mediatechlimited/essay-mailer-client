@@ -4,7 +4,7 @@ namespace MailerClient;
 
 class ConfigFactory
 {
-    public function mailerConfig(?string $mailerConfig = null): array
+    public static function mailerConfig(?string $mailerConfig = null): array
     {
         if ($mailerConfig === null) {
             $mailerConfig = config('mailer-client');
