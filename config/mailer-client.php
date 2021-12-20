@@ -1,9 +1,10 @@
 <?php
 return [
-    'apiDomain' => 'http://127.0.0.1:8000/',
+    'token' => env('MAILER_TOKEN'),
+    'apiDomain' => env('MAILER_DOMAIN'),
     'apiUrl' => 'api/send',
-    'from'=> 'noreply@test.com',
-    'appName'=> 'MailerClient',
-    'appURL'=> 'http://www.test.com',
-    'domain' => 'test.com',
+    'from'=> env('MAILER_EMAIL_FROM'),
+    'appName'=> env('APP_NAME'),
+    'appURL'=> env('APP_DOMAIN'),
+    'domain' => env('APP_URL'),
 ];
