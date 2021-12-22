@@ -29,6 +29,7 @@ class Mailer
                 'template' => $template,
                 'options' => json_encode($this->getOptions()),
                 'data' => json_encode($data),
+                'domain' => $this->getDomain(),
             ]
         );
         return $response->status();
@@ -40,7 +41,6 @@ class Mailer
             'from'=> $this->config['from'],
             'appName'=> $this->config['appName'],
             'appURL'=> $this->config['appURL'],
-            'domain' => $this->config['domain'],
         ];
     }
 
@@ -52,5 +52,10 @@ class Mailer
     private function getToken()
     {
         return $this->config['token'];
+    }
+
+    private function getDomain()
+    {
+        return $this->config['domain'];
     }
 }
