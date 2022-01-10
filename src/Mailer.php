@@ -30,6 +30,7 @@ class Mailer
                 'options' => json_encode($this->getOptions()),
                 'data' => json_encode($data),
                 'domain' => $this->getDomain(),
+                'mailer' => $this->getMailer(),
             ]
         );
         return $response->status();
@@ -57,5 +58,10 @@ class Mailer
     private function getDomain()
     {
         return $this->config['domain'];
+    }
+
+    private function getMailer()
+    {
+        return $this->config['mailer'];
     }
 }
