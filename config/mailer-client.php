@@ -7,4 +7,5 @@ return [
     'appName'=> env('APP_NAME'),
     'appURL'=> env('APP_URL'),
     'domain' => env('APP_DOMAIN'),
+    'mailer' => env('MAILER_MAILER'),
 ];
