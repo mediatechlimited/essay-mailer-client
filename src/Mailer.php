@@ -13,6 +13,16 @@ class Mailer
         $this->config = ConfigFactory::mailerConfig();
     }
 
+    public function setConfig($config): self
+    {
+        foreach ($config as $key => $value) {
+            if (isset($this->config[$key])) {
+                $this->config[$key] = $value;
+            }
+        }
+        return $this;
+    }
+
     /**
      * @param $email - email address
      * @param $template - template name
