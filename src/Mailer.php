@@ -13,6 +13,12 @@ class Mailer
         $this->config = ConfigFactory::mailerConfig();
     }
 
+    public function setSender($domain): self
+    {
+        $this->config['domain'] = $domain;
+        return $this;
+    }
+
     /**
      * @param $email - email address
      * @param $template - template name
