@@ -23,11 +23,11 @@ class Mailer
      * @param $email - email address
      * @param $template - template name
      * @param $data - mail data
-     * @return int
+     * @return array
      */
     public function send($email, $template, $data)
     {
-        $response = Http::post(
+        $response = Http::acceptJson()->post(
             $this->getApiUrl(),
             [
                 'token' => $this->getToken(),
@@ -39,7 +39,10 @@ class Mailer
                 'mailer' => $this->getMailer(),
             ]
         );
-        return $response->status();
+        return [
+            'status' => $response->status(),
+            'body' => $response->body(),
+        ];
     }
 
     private function getOptions()
