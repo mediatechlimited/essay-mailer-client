@@ -33,12 +33,12 @@ class Mailer
                 'token' => $this->getToken(),
                 'email' => $email,
                 'template' => $template,
-                'options' => json_encode($this->getOptions()),
                 'data' => json_encode($data),
                 'domain' => $this->getDomain(),
                 'mailer' => $this->getMailer(),
             ]
         );
+        
         return [
             'status' => $response->status(),
             'body' => $response->body(),
