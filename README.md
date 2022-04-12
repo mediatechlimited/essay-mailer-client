@@ -37,3 +37,13 @@ MAILER_MAILER=
 ```php
 $mailer->setSender('mysite.org')->send(...);
 ```
+
+Обновление версии:
+1) Задать номер своей версии:
+```php 
+git tag v1.1.2
+```
+2) Отправить тег на удаленный сервер: 
+```php 
+git push origin --tags
+```
