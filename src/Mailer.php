@@ -56,21 +56,33 @@ class Mailer
 
     private function getApiUrl()
     {
+        if(empty($this->config['apiDomain']) || empty($this->config['apiUrl'])) {
+            throw new \Exception('Params in getApiUrl are empty - (apiDomain/apiUrl)');
+        }
         return $this->config['apiDomain'] . $this->config['apiUrl'];
     }
 
     private function getToken()
     {
+        if(empty($this->config['token'])) {
+            throw new \Exception('Param token is empty');
+        }
         return $this->config['token'];
     }
 
     private function getDomain()
     {
+        if(empty($this->config['domain'])) {
+            throw new \Exception('Param domain is empty');
+        }
         return $this->config['domain'];
     }
 
     private function getMailer()
     {
+        if(empty($this->config['mailer'])) {
+            throw new \Exception('Param mailer is empty');
+        }
         return $this->config['mailer'];
     }
 }
